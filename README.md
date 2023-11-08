@@ -1,5 +1,4 @@
 # Analog-Data-Logger-With-Interrupt-Driven-Alarm
-# Analog-Data-Logger-With-Interrupt-Driven-Alarm
 ## Description
 Monitor and display temperature from three rooms using ADC peripheral and using the concept of chaining between 3 channels.
 Display the temperature readings on a 4x20 LCD.
