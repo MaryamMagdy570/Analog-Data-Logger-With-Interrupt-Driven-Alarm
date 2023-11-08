@@ -30,47 +30,47 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-Analog-Data-Logger-with-Driven-Interrupt-Alarm.lss \
+Analog-Data-Logger-with-Interrupt-Driven-Alarm.lss \
 
 FLASH_IMAGE += \
-Analog-Data-Logger-with-Driven-Interrupt-Alarm.hex \
+Analog-Data-Logger-with-Interrupt-Driven-Alarm.hex \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf secondary-outputs
+all: Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf secondary-outputs
 
 # Tool invocations
-Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf: $(OBJS) $(USER_OBJS)
+Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,Analog-Data-Logger-with-Driven-Interrupt-Alarm.map -mmcu=atmega32 -o "Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,Analog-Data-Logger-with-Interrupt-Driven-Alarm.map -mmcu=atmega32 -o "Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Analog-Data-Logger-with-Driven-Interrupt-Alarm.lss: Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf
+Analog-Data-Logger-with-Interrupt-Driven-Alarm.lss: Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf  >"Analog-Data-Logger-with-Driven-Interrupt-Alarm.lss"
+	-avr-objdump -h -S Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf  >"Analog-Data-Logger-with-Interrupt-Driven-Alarm.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Analog-Data-Logger-with-Driven-Interrupt-Alarm.hex: Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf
+Analog-Data-Logger-with-Interrupt-Driven-Alarm.hex: Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf  "Analog-Data-Logger-with-Driven-Interrupt-Alarm.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf  "Analog-Data-Logger-with-Interrupt-Driven-Alarm.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf
+sizedummy: Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf
+	-avr-size --format=avr --mcu=atmega32 Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Analog-Data-Logger-with-Driven-Interrupt-Alarm.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Analog-Data-Logger-with-Interrupt-Driven-Alarm.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
