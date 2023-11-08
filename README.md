@@ -10,5 +10,8 @@ the interrupt ISR is an alarm on LCD and a red lamp is turned on.
 - 4x20 Character LCD
 - Red lamp
 
-https://github.com/MaryamMagdy570/Analog-Data-Logger-With-Interrupt-Driven-Alarm/assets/82731141/35e5cf4f-aec8-4e7a-b5a9-8f3679db659f
+
+https://github.com/MaryamMagdy570/Analog-Data-Logger-With-Interrupt-Driven-Alarm/assets/82731141/dbad833b-185e-4450-82ca-51ae8216e4d9
+
+
 
